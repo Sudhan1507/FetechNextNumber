@@ -1,7 +1,7 @@
 package com.FetchNextNumber.entity;
 
 
-public class FetchNumberRequest {
+public class FetchNextNumberRequest {
 
     private  String CategoryCode;
 
