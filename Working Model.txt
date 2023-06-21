@@ -1,0 +1,66 @@
+Minimal Working Model Documentation:
+
+Features Implemented:
+
+1)FetchNextNumber API
+	Endpoint: /FetchNextNumber
+	Method: POST
+	Parameters:
+		CategoryCode (JSON body parameter)
+	Description:
+		Retrieves the current number and generates the next number based on the given requirements.
+	Response:
+		JSON object with the following fields:
+			oldValue: The current number retrieved from the database.
+			newValue: The newly generated number that meets the requirements.
+Example Usage:
+Request:
+	{
+  "CategoryCode": "CATEGORY1"
+}
+
+Response:
+	{
+  "oldValue": 10,
+  "newValue": 19
+}
+
+2)Database Data Persistence:
+	The number values are stored in an Oracle database to ensure persistence even if the application is restarted.
+
+3) Unit Testing:
+	Implemented unit tests to verify the functionality of the API and its components.
+
+Files and Components:
+	1)Controller:
+		Class: FetchNextNumberController.java
+		Responsible for handling HTTP requests and delegating the logic to the service class.
+	2)Service:
+		Class: FetchNextNumberService.java
+		Implements the business logic for fetching and generating the next number.
+        3)DAO:
+		Class: FetchNextNumberDAO.java
+		Provides methods for accessing the database and performing CRUD operations.
+	4)Entity:
+		Classes: FetchNextNumberRequest.java and FetchNextNumberResponse.java
+		Represent the request and response objects for the FetchNextNumber API.
+Database Schema"
+
+Table: Numbers
+Columns: CategoryCode, oldValue, newValue.
+Primary Key: CategoryCode
+Sample Data:
++---------------+----------+----------+
+| categoryCode  | oldValue | newValue |
++---------------+----------+----------+
+|     "ABC"     |    10    |    19    |
+|     "XYZ"     |    20    |    27    |
+|     "DEF"     |    15    |    18    |
++---------------+----------+----------+
+
+	6)Configuration:
+		application.properties
+		Contains configuration properties for the database connection and server settings.
+	7)Unit Tests:
+		Implemented unit tests to verify the functionality of the API components.
+		Examples: FetchNextNumberControllerTest.java, FetchNextNumberServiceTest.java, FetchNextNumberDAOTest.java

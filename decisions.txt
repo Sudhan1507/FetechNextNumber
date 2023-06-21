@@ -1,0 +1,63 @@
+Architectural Decisions
+
+=======================================
+Design, Architectural Patterns, Decisions
+=======================================
+
+This document outlines the design, architectural patterns, and key decisions made during the development 
+of the FetchNextNumber REST API.
+
+1. Design Patterns
+
+No specific design patterns were utilized in this implementation.
+The focus was on keeping the codebase simple and easy to understand.
+
+2. Database Access Approach
+
+Direct database access using JDBC was chosen for simplicity and to avoid additional dependencies.
+
+3. Separation of Concerns
+
+To maintain code modularity and separation of concerns, the following components were implemented:
+
+- Controller: Responsible for handling HTTP requests, extracting parameters, and invoking the service layer.
+- Service: Implements the business logic and interacts with the DAO for fetching and generating numbers.
+- DAO: Provides database access and handles CRUD operations.
+
+4. Unit Testing
+
+Unit tests were implemented for each component, including the controller, service, 
+and DAO, to ensure the correctness of the implemented functionality.
+
+5. Oracle Database
+
+Oracle was chosen as the database management system for its reliability, scalability, 
+and widespread usage in enterprise applications.
+
+6. Database Schema
+
+A single table named "Numbers" was created to store the category codes and their associated values.
+ The table includes columns for oldValue (primary key), CategoryCode, and newValue.
+
+7. Oracle JDBC Driver
+
+The Oracle JDBC driver (ojdbc8) was included as a project dependency to establish the connection 
+and interact with the Oracle database.
+
+8. Git Usage
+
+Git was used for version control, and code was pushed to a GitHub repository at regular intervals (every 15 minutes) 
+to ensure code backup and visibility of progress.
+
+9. Project Structure
+
+The project was structured using the Java Spring Boot framework, adhering to the recommended package structure 
+and separating components based on their responsibilities.
+
+10. API Documentation
+
+The usage guide and features implemented were documented in the guide.txt file to provide clear 
+instructions for using the FetchNextNumber API.
+
+
+

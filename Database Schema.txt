@@ -1,0 +1,28 @@
+Database schema;
+
+Table Name: Numbers
+
++-------------------+
+|   Number_Table    |
++-------------------+
+|   categoryCode(PK)|
+|   oldValue        |
+|   newValue        |
++-------------------+
+
+Sample Data:
++---------------+----------+----------+
+| categoryCode  | oldValue | newValue |
++---------------+----------+----------+
+|     "ABC"     |    10    |    19    |
+|     "XYZ"     |    20    |    27    |
+|     "DEF"     |    15    |    18    |
++---------------+----------+----------+
+
+
+Explanation:
+
+The database schema consists of a single table named "Number_Table".
+The primary key of the table is "oldValue" since it uniquely identifies each record.
+The "categoryCode" column stores the category code associated with each number.
+The "newValue" column stores the updated value based on the given requirements.
