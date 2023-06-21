@@ -24,7 +24,6 @@ public class FetchNextNumberController {
 
     @PostMapping
     public ResponseEntity<FetchNextNumberResponse> fetchNextNumber(@RequestBody FetchNextNumberRequest request) {
-        // Delegate the request handling to the service
         FetchNextNumberResponse response = fetchNextNumberService.fetchNextNumber(request);
         return ResponseEntity.status(HttpStatus.OK).body(response);
     }
