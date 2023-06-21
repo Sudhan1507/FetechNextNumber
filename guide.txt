@@ -1,0 +1,51 @@
+API Guide
+
+===========================================
+Minimal Usage Guide and Features Implemented
+===========================================
+
+This guide provides instructions on how to use the FetchNextNumber API and outlines the
+ features implemented in the minimal working model.
+
+1. FetchNextNumber API
+
+The FetchNextNumber API allows you to retrieve the current number and generate
+ the next number based on the given requirements. Follow the steps below to use the API:
+
+Endpoint: POST /FetchNextNumber
+
+Request Body:
+{
+  "CategoryCode": "<category_code>"
+}
+
+Response Body:
+{
+  "oldValue": <current_number>,
+  "newValue": <next_number>
+}
+
+Example Usage:
+
+Request:
+POST /FetchNextNumber
+Body:
+{
+  "CategoryCode": "CATEGORY1"
+}
+
+Response:
+{
+  "oldValue": 10,
+  "newValue": 19
+}
+
+2. Features Implemented
+
+The minimal working model includes the following features:
+
+- FetchNextNumber API: The API retrieves the current number from the database, generates the next number based on the requirements, and returns both the current and next numbers in the response.
+- Database Data Persistence: The number values are stored in an Oracle database to ensure persistence even if the application is restarted.
+- Unit Testing: Unit tests have been implemented to verify the functionality of the API and its components.
+
+
